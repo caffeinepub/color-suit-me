@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Color Suit Me – warm cream palette */
+    /* Background: #F6F1EA → oklch(0.963 0.012 65) */
+    --background: 0.963 0.012 65;
+    /* Foreground: #111111 → oklch(0.15 0 0) */
+    --foreground: 0.15 0 0;
+    /* Card: #FFFFFF → oklch(1 0 0) */
+    --card: 1 0 0;
+    --card-foreground: 0.15 0 0;
+    /* Popover */
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0 0;
+    /* Primary: #1F1F1F dark button → oklch(0.22 0 0) */
+    --primary: 0.22 0 0;
+    --primary-foreground: 0.985 0 0;
+    /* Secondary: #EFE4DA section panel → oklch(0.924 0.02 60) */
+    --secondary: 0.924 0.02 60;
+    --secondary-foreground: 0.22 0 0;
+    /* Muted */
+    --muted: 0.935 0.015 60;
+    --muted-foreground: 0.45 0 0;
+    /* Accent: #E7B6B8 blush → oklch(0.795 0.055 10) */
+    --accent: 0.795 0.055 10;
+    --accent-foreground: 0.25 0.03 20;
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    /* Border: #E8D8CA → oklch(0.9 0.025 60) */
+    --border: 0.9 0.025 60;
+    --input: 0.9 0.025 60;
+    --ring: 0.795 0.055 10;
+    --radius: 0.75rem;
+    /* Charts */
+    --chart-1: 0.73 0.09 40;
+    --chart-2: 0.7 0.07 200;
+    --chart-3: 0.65 0.06 280;
+    --chart-4: 0.8 0.1 80;
+    --chart-5: 0.75 0.12 20;
+    /* Sidebar */
+    --sidebar: 0.924 0.02 60;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.22 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.95 0.015 60;
+    --sidebar-accent-foreground: 0.22 0 0;
+    --sidebar-border: 0.9 0.025 60;
+    --sidebar-ring: 0.795 0.055 10;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DMSans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Height utilities for full viewport */
+  .h-dvh {
+    height: 100dvh;
+  }
+
+  /* Disable text selection for swipe interactions */
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
